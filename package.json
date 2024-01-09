@@ -1,0 +1,24 @@
+{
+  "name": "@formance/formance-sdk-oauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "tsc --build",
+    "check:tsc": "tsc --noEmit --skipLibCheck",
+    "check:eslint": "eslint --max-warnings=0 src",
+    "check": "npm run check:tsc && npm run check:eslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "zod": ">= 3"
+  },
+  "files": [
+    "dist"
+  ]
+}

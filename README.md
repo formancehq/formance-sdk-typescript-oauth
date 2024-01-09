@@ -18,11 +18,11 @@ const FORMANCE_ENDPOINT = "https://xxxxxxxxxxxx-xxxxx.sandbox.formance.cloud"
 
 const formance = new Formance({
     security: createAuthorizationProvider({
-        endpointUrl: FORMANCE_URL,
+        endpointUrl: FORMANCE_ENDPOINT,
         clientId: "<OAuth client id>",
         clientSecret: "<OAuth client secret>",
     }),
-    serverURL: FORMANCE_URL,
+    serverURL: FORMANCE_ENDPOINT,
 });
 ```
 

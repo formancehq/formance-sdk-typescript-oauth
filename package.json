@@ -1,6 +1,6 @@
 {
   "name": "@formance/formance-sdk-oauth",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A helper library for usign Formance with OAuth2.0",
   "main": "dist/index.js",
   "scripts": {

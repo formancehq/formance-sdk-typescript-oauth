@@ -45,7 +45,7 @@ Return a function that can be used to return an authorization header for authent
 | `endpointUrl` | `string` | The URL of the Formance API for your stack. |
 | `clientId` | `string` | The OAuth client id. |
 | `clientSecret` | `string` | The OAuth client secret. |
-| `tolerance?` | `number` | The number of seconds to allow for clock skew. Defaults to 5 minutes. |
+| `tolerance?` | `number` | The number of milliseconds to allow for clock skew. Defaults to 5 minutes. |
 
 #### Returns
 

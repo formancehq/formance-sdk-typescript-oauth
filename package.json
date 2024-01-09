@@ -1,7 +1,7 @@
 {
   "name": "@formance/formance-sdk-oauth",
   "version": "1.0.0",
-  "description": "",
+  "description": "A helper library for usign Formance with OAuth2.0",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "tsc --build",
@@ -10,7 +10,7 @@
     "check": "npm run check:tsc && npm run check:eslint"
   },
   "keywords": [],
-  "author": "",
+  "author": "Formance",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.3.3"
@@ -19,6 +19,7 @@
     "zod": ">= 3"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ]
 }

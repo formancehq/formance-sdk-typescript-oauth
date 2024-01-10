@@ -30,7 +30,7 @@ export interface AuthorizationProviderOptions {
  *                  token is refreshed before it expires. It takes into account a potential clock skew between the client
  *                  and the server, or a delay in the network. Defaults to 5 minutes.
  */
-export function createAuthorizationProvider({endpointUrl, clientId, clientSecret, tolerance = 5*300*1000}: AuthorizationProviderOptions) {
+export function createAuthorizationProvider({endpointUrl, clientId, clientSecret, tolerance = 5*60*1000}: AuthorizationProviderOptions) {
     const wellKnownUrl = `${endpointUrl}/api/auth/.well-known/openid-configuration`;
 
     let accessToken: string | null = null;

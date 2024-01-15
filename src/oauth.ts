@@ -36,12 +36,10 @@ export function createAuthorizationProvider({endpointUrl, clientId, clientSecret
     let accessToken: string | null = null;
     let refreshAt: number | null = null;
 
-    return async function accessTokenProvider(): Promise<{ authorization: string }> {
+    return async function accessTokenProvider(): Promise<string> {
         // If we have a valid access token, return it
         if (accessToken && refreshAt && refreshAt > Date.now()) {
-            return {
-                authorization: `Bearer ${accessToken}`,
-            };
+            return accessToken
         }
 
         // Retrieve the token endpoint from the well-known endpoint
@@ -65,8 +63,6 @@ export function createAuthorizationProvider({endpointUrl, clientId, clientSecret
         accessToken = token.access_token;
         refreshAt = Date.now() + token.expires_in * 1000 - tolerance;
 
-        return {
-            authorization: `Bearer ${accessToken}`,
-        };
+        return accessToken
     }
 }

@@ -11,19 +11,27 @@ npm install @formance/formance-sdk-oauth
 ## Usage
 
 ```typescript
-import { SDK as Formance } from "@formance/formance-sdk";
-import { createAuthorizationProvider } from "@formance/formance-sdk-oauth"
+import { SDK as Formance } from '@formance/formance-sdk';
+import { createAuthorizationProvider } from '@formance/formance-sdk-oauth';
 
-const FORMANCE_ENDPOINT = "https://xxxxxxxxxxxx-xxxxx.sandbox.formance.cloud"
+const ENDPOINT = "https://xxxxxxxxxx-xxxx.sandbox.formance.cloud";
 
 const formance = new Formance({
-    security: createAuthorizationProvider({
-        endpointUrl: FORMANCE_ENDPOINT,
+    serverURL: ENDPOINT,
+    authorization: createAuthorizationProvider({
+        endpointUrl: ENDPOINT,
+        // These are sensitive credentials that should not be exposed to the public.
         clientId: "<OAuth client id>",
-        clientSecret: "<OAuth client secret>",
+        clientSecret: "<OAuth client id>",
     }),
-    serverURL: FORMANCE_ENDPOINT,
 });
+
+async function main() {
+    const ledgerInfo = await formance.ledger.getInfo();
+    console.log(ledgerInfo.configInfoResponse!.data);
+}
+
+main();
 ```
 
 ## API Reference
